@@ -1,0 +1,177 @@
+:root {
+    --main-color: #278e93;
+    --main-color-black: #181818;
+    --main-text-color: #385470;
+    --accent-color: #b3d168;
+    --glay-color: #f1f1f1;
+    --fontsize-15: 4.883rem;
+    --fontsize-14: 3.906rem;
+    --fontsize-13: 3.125rem;
+    --fontsize-12: 2.500rem;
+    --fontsize-11: 2.000rem;
+    --fontsize-10: 1.600rem;
+    --fontsize-09: 1.280rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol {
+    list-style: none;
+}
+
+h1,h2,h3,h4 {
+    line-height: 1.4em;
+}
+
+p,ul,li,dt,dd,th,td {
+    line-height: 1.8em;
+}
+
+figure,ul,ol,p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+}
+
+
+
+html {
+    font-size: 62.5%; /*remサイズ指定用の文字サイズ全体統一*/
+    line-height: 1;
+}
+
+body {
+    background: #fff; /*全体背景色 - もしくはパターン*/
+    color: var(--main-text-color); /*ベース文字色*/
+    /* 「BIZ UDPゴシック」をWindowsで指定 */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial, メイリオ, Meiryo, sans-serif !important;
+    font-size: var(--fontsize-10);
+    -webkit-text-size-adjust: 100%; /*文字間の隙間を統一する*/
+}
+
+a {
+    color: var(--main-text-color);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container-2 {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.App-header {
+    background-color: var(--main-color-black);
+}
+
+.App-logo {
+    font-size: var(--fontsize-11);
+    margin: 0;
+    line-height: 1;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.App-logo a {
+    color: var(--accent-color);
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.App-navbar {
+    border-top: solid 1px #878787;
+}
+
+.App-navbar-item a {
+    color: #fff;
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.App-navbar-item a:hover {
+    background-color: var(--accent-color);
+}
+
+.heading-main {
+     text-align: center;
+}
+
+.heading-main span{
+    font-weight: normal;
+     position: relative;
+     display: inline-block;
+     padding-left: 2em;
+     padding-right: 2em;
+     padding-bottom:0.5em;
+     border-bottom: 1px solid black;
+}
+
+.heading-main span::before,
+.heading-main span::after {
+     position: absolute;
+     top: 100%;
+     left:50%;
+     transform:translateX(-50%);
+     content: '';
+     border: 10px solid transparent;
+}
+
+.heading-main span::before {
+     border-top: 10px solid black;
+}
+
+.heading-main span::after {
+     margin-top: -1px;
+     border-top: 10px solid white;
+}
+
+.bio {
+    border-color: var(--accent-color) !important;
+    position: relative;
+}
+
+.bio::before {
+    background-color: var(--accent-color);
+    content: "";
+    display: block;
+    height: 100%;
+    opacity: 0.1;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.bio-description dt {
+    font-weight: 800;
+}
+
+.bio-description dd {
+    font-size: var(--fontsize-09);
+}

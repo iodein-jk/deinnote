@@ -1,0 +1,41 @@
+.work-list-item figure {
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.work-list-item h2 {
+    font-size: var(--fontsize-09);
+    font-weight: normal;
+    padding-top: 8px;
+    padding-bottom: 4px;
+}
+
+.work-list-item .tagname {
+    list-style: none;
+    margin: 0 -8px;
+    padding: 0;
+}
+
+.work-list-item .tagname a {
+    color: #333;
+    display: block;
+    font-size: var(--fontsize-09);
+    opacity: 0.6;
+    line-height: 1;
+    margin: 4px;
+    text-decoration: none;
+}
+
+.work-list-item .tagname a:hover{
+    color: var(--main-color);
+}
+
+.social-links {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.social-links__icon {
+    padding-left: 4px;
+    padding-right: 4px;
+}

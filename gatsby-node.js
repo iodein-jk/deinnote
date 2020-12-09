@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -6,6 +7,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogTemplate = path.resolve("./src/templates/blog-list-template.js")
+  const blogTagTemplate = path.resolve("src/templates/tags.js")
+  const worksPost = path.resolve(`./src/templates/works-post.js`)
+  const worksTemplate = path.resolve("./src/templates/works-list-template.js")
+  const worksTagTemplate = path.resolve("src/templates/works-tags.js")
+
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -13,12 +20,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { category: { in: ["blog"] } } }
           limit: 1000
         ) {
           nodes {
             id
             fields {
               slug
+            }
+            frontmatter {
+              tags
+            }
+          }
+        }
+
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+            nodes {
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  tags
+                }
             }
           }
         }
@@ -35,6 +61,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes
+  const postsPerPage = 3
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -56,6 +97,111 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  // Extract tag data from query
+  const tags = result.data.tagsGroup.group
+  const tagsNode = tags.nodes
+
+  // Make tag pages
+  tags.forEach(tag => {
+      const numTagPages = Math.ceil(tag.nodes.length / postsPerPage)
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: blogTagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      })
+  })
+
+
+  // Get all markdown blog posts sorted by date
+  const resultWorks = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { category: { in: ["works"] } } }
+          limit: 1000
+        ) {
+          nodes {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+            }
+          }
+        }
+
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+            nodes {
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  tags
+                }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const works = resultWorks.data.allMarkdownRemark.nodes
+  const worksPerPage = 4
+  const worksNumPages = Math.ceil(works.length / worksPerPage)
+
+  Array.from({ length: worksNumPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/works` : `/works/${i + 1}`,
+      component: worksTemplate,
+      context: {
+        limit: worksPerPage,
+        skip: i * worksPerPage,
+        worksNumPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  if (works.length > 0) {
+    works.forEach((work, index) => {
+        const previousWorksId = index === 0 ? null : works[index - 1].id
+        const nextWorksId = index === works.length - 1 ? null : works[index + 1].id
+
+      createPage({
+        path: work.fields.slug,
+        component: worksPost,
+        context: {
+          id: work.id,
+          previousWorksId,
+          nextWorksId,
+        },
+      })
+    })
+  }
+
+  // Extract tag data from query
+  const worksTags = result.data.tagsGroup.group
+  const worksTagsNode = tags.nodes
+
+  // Make tag pages
+  worksTags.forEach(tag => {
+      const numTagPages = Math.ceil(tag.nodes.length / worksPerPage)
+      createPage({
+        path: `/works-tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: worksTagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
