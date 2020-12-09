@@ -151,9 +151,14 @@
     .posts-index {
         width: 240px;
         position: fixed;
-        top: 30%;
+        top: 50%;
         right: 0;
         transform: translateY(-50%);
+    }
+
+    .posts-index ul {
+        max-height: 450px;
+        overflow: auto;
     }
 }
 
