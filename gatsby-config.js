@@ -6,7 +6,7 @@ module.exports = {
       summary: `僕`,
     },
     description: ``,
-    siteUrl: `https://iodein.com`,
+    siteUrl: `https://deinnote.com`,
     social: {
       twitter: `iodein_jk`,
     },
