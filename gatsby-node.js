@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.blog.nodes
-  const postsPerPage = 3
+  const postsPerPage = 9
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {

@@ -14,8 +14,8 @@ class TagsPage extends React.Component {
         return (
             <div className="tag-group">
                 <div className="d-md-flex align-items-center justify-content-center">
-                    <p>キーワード：</p>
-                    <ul className="d-flex flex-wrap align-items-center">
+                    <p className="col-md-1">キーワード：</p>
+                    <ul className="col-md-11 d-flex flex-wrap align-items-center">
                       {tag.group.map(tag => (
                         <li key={tag.tag}>
                           <Link to={`/tags/${kebabCase(tag.tag)}/`}>
