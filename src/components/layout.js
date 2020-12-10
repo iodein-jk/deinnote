@@ -10,7 +10,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
         <HeaderBlock />
-        <main className="pt-60 pb-60">{children}</main>
+        <main className="pt-md-60 pb-md-60 pt-md-30 pb-md-30">{children}</main>
         <div className="container"><Bio /></div>
         <FooterBlock />
     </div>

@@ -18,9 +18,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        blog: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           filter: { frontmatter: { category: { in: ["blog"] } } }
+          limit: 1000
+        ) {
+          nodes {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+            }
+          }
+        }
+
+        works: allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { category: { in: ["works"] } } }
           limit: 1000
         ) {
           nodes {
@@ -60,7 +76,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.blog.nodes
   const postsPerPage = 3
   const numPages = Math.ceil(posts.length / postsPerPage)
 
@@ -76,10 +92,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
-
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
@@ -114,46 +126,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
   })
 
-
-  // Get all markdown blog posts sorted by date
-  const resultWorks = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          filter: { frontmatter: { category: { in: ["works"] } } }
-          limit: 1000
-        ) {
-          nodes {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-            }
-          }
-        }
-
-        tagsGroup: allMarkdownRemark(limit: 2000) {
-          group(field: frontmatter___tags) {
-            fieldValue
-            nodes {
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  tags
-                }
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const works = resultWorks.data.allMarkdownRemark.nodes
+  const works = result.data.works.nodes
   const worksPerPage = 4
   const worksNumPages = Math.ceil(works.length / worksPerPage)
 

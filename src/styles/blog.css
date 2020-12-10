@@ -167,12 +167,16 @@
 }
 
 .blog-post h1 {
-    font-size: var(--fontsize-13);
+    font-size: var(--fontsize-12);
     font-weight: 500;
 }
 
+@media (min-width: 768px) {
+    .blog-post h1 { font-size: var(--fontsize-13); }
+}
+
 .blog-post .datetime {
-    font-size: var(--fontsize-10);
+    font-size: var(--fontsize-09);
 }
 
 .blog-post .tagname {
@@ -361,14 +365,13 @@
 }
 
 .blog-post-nav li {
+    box-sizing: border-box;
     margin-top: 20px;
 }
 
 .blog-post-nav li a {
     border: solid 1px var(--glay-color);
     display: block;
-    margin-left: 8px;
-    margin-right: 8px;
     padding: 16px;
 }
 
@@ -379,5 +382,6 @@
     line-height: 1.6;
 }
 
-.blog-post-nav img {
+.blog-post-nav .gatsby-image-wrapper {
+    max-height: 280px;
 }
