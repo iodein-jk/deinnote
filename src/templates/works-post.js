@@ -4,6 +4,7 @@ import {Link, graphql} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from "../components/share";
+import RelatedPosts from "../components/works-related";
 
 import Image from "gatsby-image";
 import kebabCase from "lodash/kebabCase"
@@ -42,8 +43,9 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
                 }} itemProp="articleBody"/>
         </article>
         <nav className="blog-post-nav container-2 mt-80">
+            <RelatedPosts tags={post.frontmatter.tags} title={post.frontmatter.title}></RelatedPosts>
             <ul className="d-md-flex">
-                <li className="col-md-6">
+                <li className="col-md-6 pl-10 pr-10">
                     {
                         previous && (<Link to={`${previous.fields.slug}`} rel="prev">
                             <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid}/>
@@ -51,7 +53,7 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
                         </Link>)
                     }
                 </li>
-                <li className="col-md-6">
+                <li className="col-md-6 pl-10 pr-10">
                     {
                         next && (<Link to={`${next.fields.slug}`} rel="next">
                             <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid}/>
