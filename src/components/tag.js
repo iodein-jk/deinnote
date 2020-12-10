@@ -6,20 +6,36 @@ import kebabCase from "lodash/kebabCase"
 
 // Components
 import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-class TagsPage extends React.Component {
-    render() {
-        const tag = this.props.tag
+export const TagsPage = ({ tags }) => {
+        const data = useStaticQuery(graphql`
+          query {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+            allMarkdownRemark(
+                limit: 2000
+                filter: { frontmatter: { category: { in: ["blog"] } } }
+            ) {
+              group(field: frontmatter___tags) {
+                fieldValue
+                totalCount
+              }
+            }
+          }
+        `);
         return (
             <div className="tag-group">
                 <div className="d-md-flex align-items-center justify-content-center">
                     <p className="col-md-1">キーワード：</p>
                     <ul className="col-md-11 d-flex flex-wrap align-items-center">
-                      {tag.group.map(tag => (
+                      {data.allMarkdownRemark.group.map(tag => (
                         <li key={tag.tag}>
-                          <Link to={`/tags/${kebabCase(tag.tag)}/`}>
-                            {tag.tag} ({tag.totalCount})
+                          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                            {tag.fieldValue} ({tag.totalCount})
                           </Link>
                         </li>
                       ))}
@@ -27,7 +43,6 @@ class TagsPage extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 TagsPage.propTypes = {
@@ -49,19 +64,3 @@ TagsPage.propTypes = {
 }
 
 export default TagsPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`
