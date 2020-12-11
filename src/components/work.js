@@ -22,13 +22,13 @@ class Post extends React.Component {
                                 <header>
                                     <figure>
                                         <div className="posts__image">
-                                            <Link to={post.fields.slug} itemProp="url">
+                                            <Link to={`/${post.frontmatter.slug}`} itemProp="url">
                                                 <Image fluid={post.frontmatter.thumnail.childImageSharp.fluid}/>
                                             </Link>
                                         </div>
                                     </figure>
                                     <h2 class="post-hedding">
-                                        <Link to={post.fields.slug} itemProp="url">
+                                        <Link to={`/${post.frontmatter.slug}`} itemProp="url">
                                             <span itemProp="headline">{title}</span>
                                         </Link>
                                     </h2>
@@ -59,6 +59,7 @@ export const pageQuery = graphql `
           date(formatString: "YYYY/MM/DD")
           title
           description
+          slug
           tags
           thumnail {
             childImageSharp {

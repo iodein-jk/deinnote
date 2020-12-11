@@ -19,7 +19,7 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
         <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
     </li>)
     const siteUrl = data.site.siteMetadata.siteUrl;
-    const slug    = post.fields.slug;
+    const slug    = post.frontmatter.slug;
 
 console.log(next)
     return (<Layout location={location} title={siteTitle}>
@@ -48,7 +48,7 @@ console.log(next)
             <ul className="d-md-flex">
                 <li className="col-md-6 pl-10 pr-10">
                     {
-                        previous && (<Link to={`${previous.fields.slug}`} rel="prev">
+                        previous && (<Link to={`/${previous.frontmatter.slug}`} rel="prev">
                             <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid}/>
                             <span>{previous.frontmatter.title}</span>
                         </Link>)
@@ -56,7 +56,7 @@ console.log(next)
                 </li>
                 <li className="col-md-6 pl-10 pr-10">
                     {
-                        next && (<Link to={`${next.fields.slug}`} rel="next">
+                        next && (<Link to={`/${next.frontmatter.slug}`} rel="next">
                             <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid}/>
                             <span>{next.frontmatter.title}</span>
                         </Link>)
@@ -92,6 +92,7 @@ export const pageQuery = graphql `
         title
         date(formatString: "YYYY年MM月DD日")
         description
+        slug
         tags
         thumnail {
           childImageSharp {
@@ -104,11 +105,12 @@ export const pageQuery = graphql `
       tableOfContents
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
-      fields {
-        slug
-      }
+        fields {
+          slug
+        }
       frontmatter {
         title
+        slug
         thumnail {
           childImageSharp {
             fluid(maxWidth: 320) {
@@ -119,11 +121,12 @@ export const pageQuery = graphql `
       }
     }
     next: markdownRemark(id: { eq: $nextPostId }) {
-      fields {
-        slug
-      }
+        fields {
+          slug
+        }
       frontmatter {
         title
+        slug
         thumnail {
           childImageSharp {
             fluid(maxWidth: 320) {

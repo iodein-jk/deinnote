@@ -51,6 +51,7 @@ export const pageQuery = graphql `
           date(formatString: "YYYY年MM月DD日")
           title
           description
+          slug
           tags
           thumnail {
             childImageSharp {

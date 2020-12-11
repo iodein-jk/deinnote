@@ -2,6 +2,7 @@
 title: WEB業界とは WEBデザイナーが現役で働いているので解説します。
 date: "2019-06-29"
 description: "WEB系専門学校卒業後、 制作会社に入社し、5年余り経過しましたので、実際にWEB業界がどういう世界なのか説明していきます。"
+slug: post-551
 category: "blog"
 tags: ["WEBデザイナー"]
 thumnail: ./pasokonn1-1520x855.jpg
