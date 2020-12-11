@@ -2,8 +2,13 @@
     --main-color: #278e93;
     --main-color-black: #181818;
     --main-text-color: #385470;
+    --main-link-color: #385470;
     --accent-color: #b3d168;
-    --glay-color: #f1f1f1;
+    --glay-color: #4c4c4c;
+    --smalwhite-color: #fafafa;
+    --white-color: #fff;
+    --list-color-01: #5c9ee7;
+    --list-color-02: #f1f8ff;
     --fontsize-15: 4.883rem;
     --fontsize-14: 3.906rem;
     --fontsize-13: 3.125rem;
@@ -13,9 +18,26 @@
     --fontsize-09: 1.280rem;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-text-color: #d4d4d4;
+        --main-link-color: #4ca3bd;
+        --glay-color: #ababab;
+        --smalwhite-color: #4c4e54;
+        --white-color: #282c34;
+        --list-color-01: #2d5279;
+        --list-color-02: #5b646d;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
 }
 
 ul,ol {
@@ -47,7 +69,7 @@ html {
 }
 
 body {
-    background: #fff; /*全体背景色 - もしくはパターン*/
+    background: var(--white-color); /*全体背景色 - もしくはパターン*/
     color: var(--main-text-color); /*ベース文字色*/
     /* 「BIZ UDPゴシック」をWindowsで指定 */
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial, メイリオ, Meiryo, sans-serif !important;
@@ -56,7 +78,7 @@ body {
 }
 
 a {
-    color: var(--main-text-color);
+    color: var(--main-link-color);
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
 }
@@ -128,7 +150,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--white-color);
     border-radius: 2px;
 }
 .btn-trigger, .btn-trigger span {
@@ -210,12 +232,12 @@ a:hover {
 }
 
 .App-navbar-list > ul > li {
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px var(--white-color);
     padding: 10px;
 }
 
 .App-navbar-list > ul > li > a {
-    color: #fff;
+    color: var(--white-color);
     padding-top: 6px;
     padding-bottom: 6px;
     text-align: center;
@@ -234,7 +256,7 @@ a:hover {
 }
 
 .App-navbar-list .tag-group {
-    color: #fff;
+    color: var(--white-color);
     background-color: inherit;
     position: static;
 }
@@ -250,7 +272,7 @@ a:hover {
      padding-left: 2em;
      padding-right: 2em;
      padding-bottom:0.5em;
-     border-bottom: 1px solid black;
+     border-bottom: 1px solid var(--main-text-color);
 }
 
 .heading-main span::before,
@@ -264,12 +286,12 @@ a:hover {
 }
 
 .heading-main span::before {
-     border-top: 10px solid black;
+     border-top: 10px solid var(--main-text-color);
 }
 
 .heading-main span::after {
      margin-top: -1px;
-     border-top: 10px solid white;
+     border-top: 10px solid var(--white-color);
 }
 
 .bio {
