@@ -1,10 +1,8 @@
 .tag-group {
     background-color: #fff;
     font-size: var(--fontsize-09);
-    margin-bottom: 16px;
-    position: sticky;
-    top: 36px;
-    z-index: 5000;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .tag-group li {
@@ -18,6 +16,14 @@
     margin: 4px;
     padding: 4px 8px;
     text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+    .tag-group {
+        position: sticky;
+        top: 50px;
+        z-index: 5000;
+    }
 }
 
 .post-list-item .post-hedding {

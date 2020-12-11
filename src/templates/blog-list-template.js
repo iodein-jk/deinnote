@@ -12,15 +12,14 @@ import Image from "gatsby-image";
 import kebabCase from "lodash/kebabCase"
 
 const BlogIndex = ({data, location, pageContext, numPages}) => {
-    const siteTitle = `ブログ` || `Title`
+    const siteTitle = `ブログ`
     const posts = data.allMarkdownRemark.nodes
-    const tags = data.allMarkdownRemark
 
     return (<Layout location={location} title={siteTitle}>
         <div class="container">
             <SEO title={siteTitle} />
-            <h1 class="heading-main"><span>ブログ</span></h1>
-            <TAG tag={tags} />
+            <h1 class="heading-main"><span>{siteTitle}</span></h1>
+            <TAG />
             <POST posts={posts} />
             <PAGER pages={pageContext} />
         </div>

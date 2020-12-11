@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import {Link, graphql} from "gatsby"
 
 const Hogehoge = ({data}) => {
+    console.log(data);
     const NavMenuItem = ["Home", "Profile", "Works"];
     const NavMenuLiTag = NavMenuItem.map((item) => {
         let page_link = "";
@@ -17,16 +18,22 @@ const Hogehoge = ({data}) => {
         )
     });
     return (
-        <header className="App-header">
-            <div className="container-2">
-                <p className="App-logo"><Link to="/" >DeinNote</Link></p>
+        <header className="site-header">
+            <div className="App-header">
+                <div className="container-2">
+                    <p className="App-logo"><Link to="/" >DeinNote</Link></p>
+                </div>
             </div>
-            <nav className="App-navbar d-none">
-               <div className="App-navbar-item container">
-                   <ul className="d-flex">
-                       {NavMenuLiTag}
-                   </ul>
-               </div>
+            <label for="navigation" class="btn-trigger d-none" id="btn08">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div className="App-navbar d-none">
+               <div className="App-navbar-item"></div>
+            </div>
+            <nav className="App-navbar-list d-none">
+
             </nav>
        </header>
     );
@@ -39,6 +46,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allMarkdownRemark(
+        limit: 2000
+        filter: { frontmatter: { category: { in: ["blog"] } } }
+    ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }
