@@ -19,7 +19,7 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
         <Link to={`/works-tags/${kebabCase(tag)}/`}>{tag}</Link>
     </li>)
     const siteUrl = data.site.siteMetadata.siteUrl;
-    const slug    = post.fields.slug;
+    const slug    = post.frontmatter.slug;
 
     return (<Layout location={location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt}/>
@@ -47,7 +47,7 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
             <ul className="d-md-flex">
                 <li className="col-md-6 pl-10 pr-10">
                     {
-                        previous && (<Link to={`${previous.fields.slug}`} rel="prev">
+                        previous && (<Link to={`/${previous.frontmatter.slug}`} rel="prev">
                             <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid}/>
                             <span>{previous.frontmatter.title}</span>
                         </Link>)
@@ -55,7 +55,7 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
                 </li>
                 <li className="col-md-6 pl-10 pr-10">
                     {
-                        next && (<Link to={`${next.fields.slug}`} rel="next">
+                        next && (<Link to={`/${next.frontmatter.slug}`} rel="next">
                             <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid}/>
                             <span>{next.frontmatter.title}</span>
                         </Link>)
@@ -91,6 +91,7 @@ export const pageQuery = graphql `
         title
         date(formatString: "YYYY年MM月DD日")
         description
+        slug
         tags
         thumnail {
           childImageSharp {
@@ -108,6 +109,7 @@ export const pageQuery = graphql `
       }
       frontmatter {
         title
+        slug
         thumnail {
           childImageSharp {
             fluid(maxWidth: 320) {
@@ -123,6 +125,7 @@ export const pageQuery = graphql `
       }
       frontmatter {
         title
+        slug
         thumnail {
           childImageSharp {
             fluid(maxWidth: 320) {

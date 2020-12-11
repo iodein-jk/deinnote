@@ -2,6 +2,7 @@
 title: リペアショップScue
 date: "2020-10-10"
 description: ""
+slug: scue
 category: "works"
 tags: ["WEBサイト", "コーポレートサイト"]
 thumnail: ./thumnail.png

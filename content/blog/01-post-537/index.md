@@ -2,6 +2,7 @@
 title: 1ヶ月が短く感じる魔法
 date: "2015-05-01T22:12:03.284Z"
 description: ""
+slug: post-537
 category: "blog"
 tags: ["モチベーションアップ"]
 thumnail: ./f91d030d3a1de89176f667e4f01c0493-1520x855.jpg
