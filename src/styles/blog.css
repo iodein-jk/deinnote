@@ -1,5 +1,5 @@
 .tag-group {
-    background-color: #fff;
+    background-color: var(--white-color);
     font-size: var(--fontsize-09);
     padding-top: 16px;
     padding-bottom: 16px;
@@ -10,7 +10,7 @@
 }
 
 .tag-group li a {
-    background-color: #fafafa;
+    background-color: var(--smalwhite-color);
     border-radius: 0.8em;
     display: block;
     margin: 4px;
@@ -95,7 +95,6 @@
 }
 
 .post-list-item .tagname a {
-    color: #333;
     display: block;
     font-size: var(--fontsize-09);
     opacity: 0.6;
@@ -109,9 +108,9 @@
 }
 
 .pagenation a {
-    background-color: #f1f1f1;
+    background-color: var(--smalwhite-color);
     border-radius: 1em;
-    color: #333;
+    color: var(--main-link-color);
     display: block;
     font-size: var(--fontsize-09);
     font-weight: normal;
@@ -124,7 +123,7 @@
 .pagenation a[aria-current="page"],
 .pagenation a:hover {
     background-color: var(--main-color);
-    color: #fff;
+    color: var(--white-color);
 }
 
 .posts-index {
@@ -138,7 +137,7 @@
 .posts-index::before {
     background-color: var(--main-color);
     border-radius: 0.6em 0.6em 0 0;
-    color: #fff;
+    color: var(--white-color);
     display: block;
     content: "【目次】";
     font-size: var(--fontsize-09);
@@ -201,6 +200,7 @@
 
 .blog-post .tagname a {
     border: solid 1px;
+    color: var(--main-color);
     display: block;
     font-size: var(--fontsize-09);
     opacity: 0.6;
@@ -268,7 +268,7 @@
 }
 
 .blog-post .articleBody blockquote {
-    background-color: #f1f1f1;
+    background-color: var(--smalwhite-color);
     border: solid 1px #a9a9a9;
     line-height: 1.6;
     padding: 30px;
@@ -276,48 +276,47 @@
 
 .blog-post .articleBody table {
 	width:100%;
-	border-right: #0080a7 solid 1px;
+	border-right: var(--list-color-02) solid 1px;
 	border-collapse: collapse;
 }
 
 .blog-post .articleBody table thead th {
-	background: #0080a7;
-	color: #fff;
+	background: var(--list-color-02);
+	color: var(--white-color);
     font-weight: normal;
 	padding:10px 15px;
-	border-right: #fff solid 1px;
-	border-bottom: #fff solid 1px;
+	border-right: var(--white-color) solid 1px;
+	border-bottom: var(--white-color) solid 1px;
 }
 
 .blog-post .articleBody table thead th:last-child {
-	border-right: #0080a7 solid 1px;
+	border-right: var(--list-color-02) solid 1px;
 }
 
 .blog-post .articleBody table tbody th {
-	background: #0080a7;
-	color: #fff;
+	background: var(--list-color-02);
+	color: var(--white-color);
 	padding:10px 15px;
-	border-bottom: #fff solid 1px;
+	border-bottom: var(--white-color) solid 1px;
 	vertical-align:top;
 }
 
 .blog-post .articleBody table tbody tr:last-child th {
-	border-bottom: #0080a7 solid 1px;
+	border-bottom: var(--list-color-02) solid 1px;
 }
 
 .blog-post .articleBody table tbody td {
-	background: #fff;
+	background: var(--white-color);
 	padding:10px 15px;
-	border-left: #0080a7 solid 1px;
-	border-bottom: #0080a7 solid 1px;
+	border-left: var(--list-color-02) solid 1px;
+	border-bottom: var(--list-color-02) solid 1px;
 	vertical-align:top;
 }
 
 .blog-post .articleBody ul {
     padding: 20px;
-    color: #448ccb;
-    background: #ecf3fa;
-    border: dashed 2px #adcce8;
+    background:  var(--list-color-02);
+    border: dashed 2px var(--list-color-01);
     list-style: none;
 }
 
@@ -346,8 +345,8 @@
     position: relative;
     padding: 0.5em;
     line-height: 1.5em;
-    background: #f1f8ff;
-    border-left : solid 35px #5c9ee7;
+    background: var(--list-color-02);
+    border-left : solid 35px var(--list-color-01);
     margin-bottom: 5px;
 }
 
