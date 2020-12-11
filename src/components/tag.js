@@ -30,7 +30,7 @@ export const TagsPage = ({ tags }) => {
         return (
             <div className="tag-group">
                 <div className="d-md-flex align-items-center justify-content-center">
-                    <p className="col-md-1">キーワード：</p>
+                    <p className="col-md-1">カテゴリー：</p>
                     <ul className="col-md-11 d-flex flex-wrap align-items-center">
                       {data.allMarkdownRemark.group.map(tag => (
                         <li key={tag.tag}>

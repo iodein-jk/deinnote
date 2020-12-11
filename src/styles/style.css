@@ -83,6 +83,13 @@ a:hover {
 
 .App-header {
     background-color: var(--main-color-black);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: hsl(0deg 0% 2% / 70%);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9990;
 }
 
 .App-logo {
