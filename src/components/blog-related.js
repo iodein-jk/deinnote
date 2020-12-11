@@ -18,6 +18,7 @@ export const RelatedPosts = ({ tags, title }) => {
             frontmatter {
               title
               tags
+              slug
               thumnail {
                 childImageSharp {
                   fluid(maxWidth: 338) {
@@ -58,7 +59,7 @@ export const RelatedPosts = ({ tags, title }) => {
         <ul className="blog-post-nav d-md-flex flex-wrap">
         {relatedPosts.map((row, index) => (
             <li className="col-md-6 pl-10 pr-10" key={index}>
-                <Link to={row.node.fields.slug} itemProp="url">
+                <Link to={`/${row.node.frontmatter.slug}`}>
                     <Image fluid={row.node.frontmatter.thumnail.childImageSharp.fluid}/>
                     <span>{row.node.frontmatter.title}</span>
                 </Link>

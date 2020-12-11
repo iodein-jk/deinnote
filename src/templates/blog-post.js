@@ -21,7 +21,6 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
     const siteUrl = data.site.siteMetadata.siteUrl;
     const slug    = post.frontmatter.slug;
 
-console.log(next)
     return (<Layout location={location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt}/>
         <article className="blog-post container-2" itemScope="itemScope" itemType="http://schema.org/Article">
@@ -38,7 +37,6 @@ console.log(next)
                     </div>
                 </figure>
             </header>
-            <div className="posts-index" dangerouslySetInnerHTML={{__html: post.tableOfContents}}/>
             <section className="articleBody" dangerouslySetInnerHTML={{
                     __html: post.html
                 }} itemProp="articleBody"/>
@@ -102,7 +100,6 @@ export const pageQuery = graphql `
           }
         }
       }
-      tableOfContents
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
         fields {

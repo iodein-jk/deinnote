@@ -13,6 +13,9 @@ class Post extends React.Component {
                 {
                     posts.map(post => {
                         const title = post.frontmatter.title || post.fields.slug
+                        const slug = post.frontmatter.slug
+                        const date = post.frontmatter.date
+                        const thumnail = post.frontmatter.thumnail.childImageSharp.fluid
                         const tags = post.frontmatter.tags
                         const tagItems = tags.map((tag) => <li class="col">
                             <Link to={`/works-tags/${kebabCase(tag)}/`}>{tag}</Link>
@@ -22,13 +25,13 @@ class Post extends React.Component {
                                 <header>
                                     <figure>
                                         <div className="posts__image">
-                                            <Link to={`/${post.frontmatter.slug}`} itemProp="url">
-                                                <Image fluid={post.frontmatter.thumnail.childImageSharp.fluid}/>
+                                            <Link to={`/${slug}`} itemProp="url">
+                                                <Image fluid={thumnail}/>
                                             </Link>
                                         </div>
                                     </figure>
                                     <h2 class="post-hedding">
-                                        <Link to={`/${post.frontmatter.slug}`} itemProp="url">
+                                        <Link to={`/${slug}`} itemProp="url">
                                             <span itemProp="headline">{title}</span>
                                         </Link>
                                     </h2>

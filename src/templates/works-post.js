@@ -37,7 +37,6 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
                 </ul>
                 <Share title={post.frontmatter.title} url={`${siteUrl}${slug}`} description={post.excerpt} />
             </header>
-            <div className="posts-index" dangerouslySetInnerHTML={{__html: post.tableOfContents}}/>
             <section className="articleBody" dangerouslySetInnerHTML={{
                     __html: post.html
                 }} itemProp="articleBody"/>
@@ -101,7 +100,6 @@ export const pageQuery = graphql `
           }
         }
       }
-      tableOfContents
     }
     previous: markdownRemark(id: { eq: $previousWorksId }) {
       fields {

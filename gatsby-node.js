@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const worksPost = path.resolve(`./src/templates/works-post.js`)
   const worksTemplate = path.resolve("./src/templates/works-list-template.js")
   const worksTagTemplate = path.resolve("src/templates/works-tags.js")
+  const pagePost = path.resolve(`./src/templates/page-post.js`)
 
 
   // Get all markdown blog posts sorted by date
@@ -47,6 +48,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               tags
+              slug
+            }
+          }
+        }
+
+        pages: allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: ASC }
+          filter: { frontmatter: { category: { in: ["pages"] } } }
+          limit: 1000
+        ) {
+          nodes {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
               slug
             }
           }
@@ -177,6 +194,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
   })
+
+  const pages = result.data.pages.nodes
+  if (pages.length > 0) {
+    pages.forEach((page, index) => {
+      createPage({
+        path: page.frontmatter.slug,
+        component: pagePost,
+        context: {
+          id: page.id,
+        },
+      })
+    })
+  }
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
