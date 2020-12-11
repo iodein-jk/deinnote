@@ -18,7 +18,8 @@ const Share = props => {
 
   return (
     <React.Fragment>
-      <div className="social-links d-flex justify-content-center">
+      <div className="social-links">
+          <div className="social-links-inner">
         <div className="col">
         <div className="social-links__icon">
           <TwitterShareButton url={articleUrl} title={articleTitle}>
@@ -45,6 +46,7 @@ const Share = props => {
           <LinkedinShareButton url={articleUrl} quote={articleDescription}>
             <LinkedinIcon round size={iconSize} />
           </LinkedinShareButton>
+        </div>
         </div>
         </div>
       </div>
