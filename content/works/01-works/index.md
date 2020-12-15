@@ -1,40 +1,12 @@
 ---
-title: リペアショップScue
+title: WordPress　ブログ
 date: "2020-10-10"
 description: ""
-slug: scue
+slug: wordpress-blog01
 category: "works"
-tags: ["WEBサイト", "コーポレートサイト"]
+tags: ["WEBサイト", "ブログ", "WordPress"]
 thumnail: ./thumnail.png
 ---
 
-| URL |
-|--|
-| http://www.scue.jp/ |
-
-## 企画
-
-|全体規模|プロジェクト概要  |
-|--|--|
-| 2ヶ月程度 | 新規サイト制作   |
-
-## 設計担当
- | 担当フェーズ |担当業務|
-|--|--|
- |サイト構築    | 下層ページデザイン/下層ページデザイン/コーディング |
-
-## 制作担当
- | デザイン制作 |コーディング|
-|--|--|
- |1週間    | 2週間 |
-
-## 全体規模/チーム規模
- | 全体 |チーム|
-|--|--|
- |3人    | 3人 |
-
-## 言語/FW
-- HTML5
-- CSS3
-- javaScript(jQuery)
-- PHP
+## サイトの概要
+自分用に制作した過去のWordPressのサイトです。

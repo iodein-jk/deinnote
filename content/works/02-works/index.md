@@ -1,16 +1,22 @@
 ---
-title: 過去の広告
-date: "2019-10-10"
+title: WordPressブログその2
+date: "2020-10-11"
 description: ""
-slug: works5
+slug: wordpress-blog02
 category: "works"
-tags: ["広告"]
-thumnail: ./salty_egg.jpg
+tags: ["WEBサイト", "ブログ", "WordPress"]
+thumnail: ./thumnail.png
 ---
 
-## WEBサイトの概要
-ブログです。
+## サイトの概要
+ポートフォリオ用にと考え制作したWordPressサイトです。
+当時は["TCD"](https://tcd-theme.com/wp-tcd)で販売しているWordPressテーマのデザインに感化されていて、似たようなテーマを作ろうとしていました。
 
-ブログです。
+### URL
+http://log-foto.com/
 
-ブログです。ブログです。ブログです。ブログです。
+### 言語
+- HTML/css
+- javascript (jQuery)
+- PHP
+- WordPress
