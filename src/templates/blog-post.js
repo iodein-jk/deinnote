@@ -44,19 +44,19 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
         <nav className="blog-post-nav container-2 mt-80">
             <RelatedPosts tags={post.frontmatter.tags} title={post.frontmatter.title}></RelatedPosts>
             <p className="mt-60">直近の記事</p>
-            <ul className="d-md-flex">
-                <li className="col-md-6 pl-10 pr-10">
+            <ul className="d-flex">
+                <li className="col-6 pl-10 pr-10">
                     {
                         previous && (<Link to={`/${previous.frontmatter.slug}`} rel="prev">
-                            <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid}/>
+                            <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
                             <span>{previous.frontmatter.title}</span>
                         </Link>)
                     }
                 </li>
-                <li className="col-md-6 pl-10 pr-10">
+                <li className="col-6 pl-10 pr-10">
                     {
                         next && (<Link to={`/${next.frontmatter.slug}`} rel="next">
-                            <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid}/>
+                            <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
                             <span>{next.frontmatter.title}</span>
                         </Link>)
                     }

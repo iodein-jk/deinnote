@@ -9,7 +9,7 @@ class Post extends React.Component {
     render() {
         const posts = this.props.posts
         return (<div>
-            <ol class="d-md-flex flex-wrap">
+            <ol class="d-flex flex-wrap">
                 {
                     posts.map(post => {
                         const title = post.frontmatter.title || post.fields.slug
@@ -20,8 +20,8 @@ class Post extends React.Component {
                         const tagItems = tags.map((tag) => <li class="col">
                             <Link to={`/works-tags/${kebabCase(tag)}/`}>{tag}</Link>
                         </li>)
-                        return (<li class="col-md-3" key={post.fields.slug}>
-                            <article className="work-list-item p-md-10 pb-20" itemScope="itemScope" itemType="http://schema.org/Article">
+                        return (<li class="col-md-3 col-6" key={post.fields.slug}>
+                            <article className="work-list-item p-10" itemScope="itemScope" itemType="http://schema.org/Article">
                                 <header>
                                     <figure>
                                         <div className="posts__image">
