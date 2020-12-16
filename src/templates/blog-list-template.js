@@ -7,10 +7,6 @@ import TAG from "../components/tag"
 import POST from "../components/post"
 import PAGER from "../components/pager"
 
-import Image from "gatsby-image";
-
-import kebabCase from "lodash/kebabCase"
-
 const BlogIndex = ({data, location, pageContext, numPages}) => {
     const siteTitle = `ブログ`
     const posts = data.allMarkdownRemark.nodes

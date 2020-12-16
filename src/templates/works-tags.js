@@ -2,16 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import {Link, graphql} from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TAG from "../components/works-tag"
 import WORKS from "../components/work"
 import PAGER from "../components/pager"
-
-import Image from "gatsby-image";
-
-import kebabCase from "lodash/kebabCase"
 
 const Tags = ({data, location, pageContext}) => {
     const siteTitle = pageContext || `Title`
