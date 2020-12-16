@@ -30,7 +30,7 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
                 <ul class="tag-group d-flex flex-wrap justify-content-center">
                     {tagItems}
                 </ul>
-                <Share title={post.frontmatter.title} url={`${siteUrl}${slug}`} description={post.excerpt} />
+                <Share title={post.frontmatter.title} url={`${siteUrl}/${slug}`} description={post.excerpt} />
                 <figure>
                     <div className="posts__image">
                         <Image className="" fluid={post.frontmatter.thumnail.childImageSharp.fluid}/>
