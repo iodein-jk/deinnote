@@ -10,6 +10,10 @@
     padding-bottom: 4px;
 }
 
+.work-list-item h2 a {
+    color: inherit;
+}
+
 .work-list-item .gatsby-image-wrapper {
     height: 0;
     padding-top: 83.261%;
@@ -22,7 +26,6 @@
 }
 
 .work-list-item .tagname a {
-    color: #333;
     display: block;
     font-size: var(--fontsize-09);
     opacity: 0.6;

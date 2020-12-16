@@ -21,7 +21,7 @@
 @media (min-width: 1000px) {
     .tag-group {
         position: sticky;
-        top: 50px;
+        top: 49px;
         z-index: 9;
     }
 }
