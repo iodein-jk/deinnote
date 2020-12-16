@@ -35,7 +35,7 @@ const WorksPostTemplate = ({data, pageContext, location}) => {
                 <ul class="tag-group d-flex flex-wrap justify-content-center">
                     {tagItems}
                 </ul>
-                <Share title={post.frontmatter.title} url={`${siteUrl}${slug}`} description={post.excerpt} />
+                <Share title={post.frontmatter.title} url={`${siteUrl}/${slug}`} description={post.excerpt} />
             </header>
             <section className="articleBody" dangerouslySetInnerHTML={{
                     __html: post.html
