@@ -274,13 +274,20 @@ a:hover {
 }
 
 .heading-main span{
+    font-size: var(--fontsize-11);
     font-weight: normal;
-     position: relative;
-     display: inline-block;
-     padding-left: 2em;
-     padding-right: 2em;
-     padding-bottom:0.5em;
-     border-bottom: 1px solid var(--main-text-color);
+    position: relative;
+    display: inline-block;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom:0.5em;
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+@media (min-width: 768px) {
+    .heading-main span{
+        font-size: var(--fontsize-13);
+    }
 }
 
 .heading-main span::before,
