@@ -55,7 +55,7 @@ export const RelatedPosts = ({ tags, title }) => {
 
   return (
     <div className="mt-80">
-      <h2>関連記事</h2>
+        <p className="mt-60">関連記事</p>
         <ul className="blog-post-nav d-md-flex flex-wrap">
         {relatedPosts.map((row, index) => (
             <li className="col-md-6 pl-10 pr-10" key={index}>

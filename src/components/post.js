@@ -26,7 +26,7 @@ class Post extends React.Component {
                                     <figure>
                                         <div className="posts__image">
                                             <Link to={`/${slug}`} itemProp="url">
-                                                <Image fluid={thumnail}/>
+                                                <Image fluid={thumnail} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
                                             </Link>
                                         </div>
                                     </figure>

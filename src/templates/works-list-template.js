@@ -7,7 +7,7 @@ import TAG from "../components/works-tag"
 import WORK from "../components/work"
 import PAGER from "../components/works-pager"
 
-import Image from "gatsby-image";
+import Image from "gatsby-image/withIEPolyfill";
 
 import kebabCase from "lodash/kebabCase"
 

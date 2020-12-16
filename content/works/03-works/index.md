@@ -4,7 +4,7 @@ date: "2020-12-10"
 description: ""
 slug: works-aoiblog
 category: "works"
-tags: ["WEBサイト", "ブログ","ポートフォリオ"]
+tags: ["WEBサイト", "ブログ","ポートフォリオ","SPA","WordPress"]
 thumnail: ./thumnail.png
 ---
 

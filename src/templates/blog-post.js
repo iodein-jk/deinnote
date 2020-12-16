@@ -27,7 +27,7 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
             <header className="text-center">
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
                 <p className="datetime">{post.frontmatter.date}</p>
-                <ul class="tagname d-flex flex-wrap justify-content-center">
+                <ul class="tag-group d-flex flex-wrap justify-content-center">
                     {tagItems}
                 </ul>
                 <Share title={post.frontmatter.title} url={`${siteUrl}${slug}`} description={post.excerpt} />
@@ -43,6 +43,7 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
         </article>
         <nav className="blog-post-nav container-2 mt-80">
             <RelatedPosts tags={post.frontmatter.tags} title={post.frontmatter.title}></RelatedPosts>
+            <p className="mt-60">直近の記事</p>
             <ul className="d-md-flex">
                 <li className="col-md-6 pl-10 pr-10">
                     {

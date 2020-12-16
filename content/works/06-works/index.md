@@ -4,7 +4,7 @@ date: "2020-12-14"
 description: ""
 slug: works-deinnote
 category: "works"
-tags: ["WEBサイト","ブログ","ポートフォリオ"]
+tags: ["WEBサイト","ブログ","ポートフォリオ","SPA"]
 thumnail: ./thumnail.png
 ---
 

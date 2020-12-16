@@ -1,6 +1,9 @@
 import React from "react"
 import {Link, graphql} from "gatsby"
 
+import POSTTAG from "../components/tag"
+import WORKSTAG from "../components/works-tag"
+
 const Hogehoge = ({data}) => {
     console.log(data);
     const NavMenuItem = ["Home", "Profile", "Works"];
@@ -24,17 +27,23 @@ const Hogehoge = ({data}) => {
                     <p className="App-logo"><Link to="/" >DeinNote</Link></p>
                 </div>
             </div>
-            <label for="navigation" class="btn-trigger d-none" id="btn08">
+            <label for="navigation" class="btn-trigger" id="btn08">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-            <div className="App-navbar d-none">
-               <div className="App-navbar-item"></div>
+            <div className="App-navbar">
+               <nav className="App-navbar-item container">
+                   <div className="App-navbar-list">
+                       <Link className="App-navbar-list-parent" to="/" >Blog</Link>
+                       <div className="App-navbar-list-tag"><POSTTAG /></div>
+                   </div>
+                   <div className="App-navbar-list">
+                       <Link className="App-navbar-list-parent" to="/works" >Works</Link>
+                       <div className="App-navbar-list-tag"><WORKSTAG /></div>
+                   </div>
+               </nav>
             </div>
-            <nav className="App-navbar-list d-none">
-
-            </nav>
        </header>
     );
 }
