@@ -56,11 +56,11 @@ export const RelatedPosts = ({ tags, title }) => {
   return (
     <div className="mt-80">
         <p>関連記事</p>
-        <ul className="blog-post-nav d-md-flex flex-wrap">
+        <ul className="blog-post-nav d-flex flex-wrap">
         {relatedPosts.map((row, index) => (
-            <li className="col-md-6 pl-10 pr-10" key={index}>
+            <li className="col-md-4 col-6 pl-10 pr-10" key={index}>
                 <Link to={`/${row.node.frontmatter.slug}`}>
-                    <Image fluid={row.node.frontmatter.thumnail.childImageSharp.fluid}/>
+                    <Image fluid={row.node.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
                     <span>{row.node.frontmatter.title}</span>
                 </Link>
             </li>

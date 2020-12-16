@@ -19,6 +19,34 @@
     padding-top: 83.261%;
 }
 
+.work-list-item figure {
+    position: relative;
+}
+
+.work-list-item figure a::before {
+    box-sizing: border-box;
+    background: var(--main-color);
+    background: -webkit-linear-gradient(0deg, var(--main-color), var(--accent-color));
+    border-radius: 1em;
+    content: "";
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-in;
+    width: 100%;
+    z-index: 4;
+}
+
+.work-list-item figure a:hover::before {
+    opacity: 0.6;
+}
+
+.work-list-item figure a img {
+    border-radius: 1em;
+}
+
 .work-list-item .tagname {
     list-style: none;
     margin: 0 -8px;
