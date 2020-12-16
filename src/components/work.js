@@ -20,13 +20,13 @@ class Post extends React.Component {
                         const tagItems = tags.map((tag) => <li class="col">
                             <Link to={`/works-tags/${kebabCase(tag)}/`}>{tag}</Link>
                         </li>)
-                        return (<li class="col-6" key={post.fields.slug}>
+                        return (<li class="col-md-3" key={post.fields.slug}>
                             <article className="work-list-item p-md-10 pb-20" itemScope="itemScope" itemType="http://schema.org/Article">
                                 <header>
                                     <figure>
                                         <div className="posts__image">
                                             <Link to={`/${slug}`} itemProp="url">
-                                                <Image fluid={thumnail}/>
+                                                <Image fluid={thumnail} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
                                             </Link>
                                         </div>
                                     </figure>

@@ -4,9 +4,11 @@
     --main-text-color: #385470;
     --main-link-color: #385470;
     --accent-color: #b3d168;
+    --bler-color: 0deg 0% 98%;
     --glay-color: #4c4c4c;
     --smalwhite-color: #fafafa;
     --white-color: #fff;
+    --black-color: #282c34;
     --list-color-01: #5c9ee7;
     --list-color-02: #f1f8ff;
     --fontsize-15: 4.883rem;
@@ -22,9 +24,11 @@
     :root {
         --main-text-color: #d4d4d4;
         --main-link-color: #4ca3bd;
+        --bler-color: 0deg 0% 2%;
         --glay-color: #ababab;
         --smalwhite-color: #4c4e54;
         --white-color: #282c34;
+        --black-color: #fff;
         --list-color-01: #2d5279;
         --list-color-02: #5b646d;
     }
@@ -111,13 +115,13 @@ a:hover {
     background-color: var(--main-color-black);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    background-color: hsl(0deg 0% 2% / 70%);
+    background-color: hsl(var(--bler-color) / 70%);
     height: 50px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 6003;
+    z-index: 10;
 }
 
 .App-logo {
@@ -129,7 +133,10 @@ a:hover {
 }
 
 .App-logo a {
-    color: var(--accent-color);
+    background: -webkit-linear-gradient(0deg, var(--main-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--main-color);
     font-weight: normal;
     line-height: 1;
     text-decoration: none;
@@ -143,14 +150,14 @@ a:hover {
     width: 30px;
     height: 22px;
     cursor: pointer;
-    z-index: 6006;
+    z-index: 12;
 }
 .btn-trigger span {
     position: absolute;
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--white-color);
+    background-color: var(--black-color);
     border-radius: 2px;
 }
 .btn-trigger, .btn-trigger span {
@@ -181,84 +188,85 @@ a:hover {
 }
 
 .App-navbar {
-    height: 100px;
-    overflow: hidden;
+    background-color: var(--main-color-black);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: hsl(var(--bler-color) / 70%);
+    border: solid 8px var(--main-color);
+    box-sizing: border-box;
+    height: 0;
+    padding: 40px 0;
     position: fixed;
     top: 0;
-    right: 0;
-    transform-origin: top right;
-    transition: all 0.4s ease-out;
-    width: 100px;
-    z-index: 6004;
-}
-
-.App-navbar-item {
-    background-color: var(--main-color);
-    border-radius: 200px;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 0;
-    transform: translateX(100px) translateY(-120px);
-    transform-origin: top right;
-    transition: all 0.4s ease-out;
-}
-
-#navigation:checked ~ header .App-navbar {
-    height: 100vh;
-    right: 0;
-    width: 100%;
-}
-
-#navigation:checked ~ header .App-navbar-item {
-    height: 100%;
-    border-radius: 0;
-    width: 100%;
-    transform: translateX(0) translateY(0);
-}
-
-.App-navbar-list {
-    display: none;
-    height: 100%;
-    position: fixed;
-    top: 60px;
     left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
     width: 100%;
-    z-index: 6010;
-}
-
-#navigation:checked ~ header .App-navbar-list {
-    display: block;
-}
-
-.App-navbar-list > ul > li {
-    border-bottom: solid 1px var(--white-color);
-    padding: 10px;
-}
-
-.App-navbar-list > ul > li > a {
-    color: var(--white-color);
-    padding-top: 6px;
-    padding-bottom: 6px;
-    text-align: center;
-    text-decoration: none;
+    z-index: -1;
 }
 
 .App-navbar-list {
     opacity: 0;
     transform: translateY(10px);
-    transition: all 0.4s 0.5s ease-out;
+    transition: all 0.6s ease-out;
 }
 
-#navigation:checked ~ header .App-navbar-list {
-    opacity: 1;
-    transform: translateY(0);
+.App-navbar-list:nth-child(n+2) {
+    margin-top: 40px;
+}
+
+.App-navbar-list-parent {
+    color: var(--main-color);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    display: inline-block;
+    margin-left: 16px;
+    padding: 4px 16px 8px;
+    position: relative;
+    text-decoration: none;
+}
+
+.App-navbar-list-parent::before,
+.App-navbar-list-parent::after {
+    border-top: solid 1px;
+    content: "";
+    width: 54%;
+    position: absolute;
+    top: 0;
+}
+
+.App-navbar-list-parent::before {
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(-24deg);
+}
+
+.App-navbar-list-parent::after {
+    right: 0;
+    transform-origin: top right;
+    transform: rotate(24deg);
+}
+
+.App-navbar-list-tag {
+    border-top: solid 1px var(--main-color);
 }
 
 .App-navbar-list .tag-group {
-    color: var(--white-color);
-    background-color: inherit;
-    position: static;
+    padding: 16px;
+}
+
+#navigation:checked ~ header .App-navbar {
+    height: 100vh;
+    opacity: 1;
+    overflow: auto;
+    z-index: 11;
+}
+
+#navigation:checked ~ header .App-navbar-list {
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 .heading-main {
