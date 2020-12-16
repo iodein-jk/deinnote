@@ -81,7 +81,7 @@ category: "pages"
 
 
 ## 富士屋
-[!["富士屋"](./img-fuziya.png)																					](http://www.fuziya.co.jp/)
+[!["富士屋"](./img-fuziya.png)](http://www.fuziya.co.jp/)
 ### プロジェクト概要
 - 既存サイトのリニューアル
 - 全体規模：2ヶ月程度					
@@ -99,7 +99,7 @@ category: "pages"
 - PHP
 
 ## アトリエ・カノ
-!["アトリエ・カノ"](./img-atelier-kano.png)																								[](http://atelier-kano.com/)
+[!["アトリエ・カノ"](./img-atelier-kano.png)](http://atelier-kano.com/)
 ### プロジェクト概要
 - 新規サイト制作
 - 全体規模：2ヶ月程度							
