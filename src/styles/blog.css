@@ -21,7 +21,7 @@
 @media (min-width: 1000px) {
     .tag-group {
         position: sticky;
-        top: 50px;
+        top: 49px;
         z-index: 9;
     }
 }
@@ -254,7 +254,7 @@
 
 .blog-post .articleBody h2 {
     padding: 1rem 2rem;
-    font-size: var(--fontsize-12);
+    font-size: var(--fontsize-11);
     font-weight: normal;
     color: #fff;
     background: #094;
@@ -264,12 +264,19 @@
 
 .blog-post .articleBody h3 {
     border-bottom: dashed 2px;
-    font-size: var(--fontsize-12);
+    font-size: var(--fontsize-11);
     font-weight: normal;
 }
 
 .blog-post .articleBody h4 {
     font-size: var(--fontsize-11);
+}
+
+@media (min-width: 768px) {
+    .blog-post .articleBody h2,
+    .blog-post .articleBody h3 {
+        font-size: var(--fontsize-12);
+    }
 }
 
 .blog-post .articleBody blockquote {
