@@ -221,6 +221,10 @@
     color: var(--main-color);
 }
 
+.blog-post .tag-group {
+    position: static;
+}
+
 .blog-post figure {
     margin-top: 20px;
 }

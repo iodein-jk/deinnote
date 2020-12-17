@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DeinNote]]></title><description><![CDATA[DeinNote]]></description><link>https://deinnote.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Dec 2020 17:14:58 GMT</lastBuildDate><item><title><![CDATA[DeinNote]]></title><description><![CDATA[サイトの概要 Gatsby.jsで制作したSPAサイトです 既存のCMS…]]></description><link>https://deinnote.com/06-works/</link><guid isPermaLink="false">https://deinnote.com/06-works/</guid><pubDate>Mon, 14 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;サイトの概要&quot;&gt;サイトの概要&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[DeinNote]]></title><description><![CDATA[DeinNote]]></description><link>https://deinnote.com</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 17 Dec 2020 09:46:09 GMT</lastBuildDate><item><title><![CDATA[竜宮レナ]]></title><description><![CDATA[ひぐらしのなく頃により「竜宮レナ」 おそらく僕が一番初めに見た深夜アニメです。
+それだけにとても印象的。鉈ってかっこいいよね・・・ Pixiv https://www.pixiv.net/artworks/86354110 仕様ソフト ClipStudioPaint]]></description><link>https://deinnote.com/09-rena-higurashi-01/</link><guid isPermaLink="false">https://deinnote.com/09-rena-higurashi-01/</guid><pubDate>Thu, 17 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;ひぐらしのなく頃により「竜宮レナ」&quot;&gt;ひぐらしのなく頃により「竜宮レナ」&lt;/h2&gt;
+&lt;p&gt;おそらく僕が一番初めに見た深夜アニメです。
+それだけにとても印象的。鉈ってかっこいいよね・・・&lt;/p&gt;
+&lt;h3 id=&quot;Pixiv&quot;&gt;Pixiv&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.pixiv.net/artworks/86354110&quot;&gt;https://www.pixiv.net/artworks/86354110&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;仕様ソフト&quot;&gt;仕様ソフト&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ClipStudioPaint&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[DeinNote]]></title><description><![CDATA[サイトの概要 Gatsby.jsで制作したSPAサイトです 既存のCMS…]]></description><link>https://deinnote.com/06-works/</link><guid isPermaLink="false">https://deinnote.com/06-works/</guid><pubDate>Mon, 14 Dec 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;サイトの概要&quot;&gt;サイトの概要&lt;/h2&gt;
 &lt;p&gt;Gatsby.jsで制作したSPAサイトです&lt;/p&gt;
 &lt;p&gt;既存のCMSの画像をアップロードしたり、いちいちボタン押して更新がなんだか煩わしく感じられて「全部マークダウンで管理したい」と思い制作しました。&lt;/p&gt;
 &lt;p&gt;なのでこのサイトは全てのページをマークダウンのファイルで新規作成できるようになっています。
@@ -41,6 +50,13 @@ ICS MEDIAのサイトリニューアルの記事に感化され、「自分も�
 &lt;ul&gt;
 &lt;li&gt;HTML/css (BootStrap4)&lt;/li&gt;
 &lt;li&gt;javascript&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[涼宮ハルヒ]]></title><description><![CDATA[涼宮ハルヒの憂鬱により「涼宮ハルヒ」 新刊の発売記念に制作 Pixiv https://www.pixiv.net/artworks/86353738 仕様ソフト ClipStudioPaint]]></description><link>https://deinnote.com/08-haruhi-suzumiya-01/</link><guid isPermaLink="false">https://deinnote.com/08-haruhi-suzumiya-01/</guid><pubDate>Thu, 26 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;涼宮ハルヒの憂鬱により「涼宮ハルヒ」&quot;&gt;涼宮ハルヒの憂鬱により「涼宮ハルヒ」&lt;/h2&gt;
+&lt;p&gt;新刊の発売記念に制作&lt;/p&gt;
+&lt;h3 id=&quot;Pixiv&quot;&gt;Pixiv&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.pixiv.net/artworks/86353738&quot;&gt;https://www.pixiv.net/artworks/86353738&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;仕様ソフト&quot;&gt;仕様ソフト&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ClipStudioPaint&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[デザインプレビュー用ツール]]></title><description><![CDATA[ツールの概要 仕事でクライアントにデザインを確認してもらう際、全ページのデザインや修正のログをまとめて確認できるページがあれば便利かなと思い作成 1Pごとにタブを分けて、さらに各デザイン別にリストを用意して初稿から完成稿まで一貫してチェックできるようになっています。 URL…]]></description><link>https://deinnote.com/05-works/</link><guid isPermaLink="false">https://deinnote.com/05-works/</guid><pubDate>Wed, 11 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;ツールの概要&quot;&gt;ツールの概要&lt;/h2&gt;
 &lt;p&gt;仕事でクライアントにデザインを確認してもらう際、全ページのデザインや修正のログをまとめて確認できるページがあれば便利かなと思い作成&lt;/p&gt;
 &lt;p&gt;1Pごとにタブを分けて、さらに各デザイン別にリストを用意して初稿から完成稿まで一貫してチェックできるようになっています。&lt;/p&gt;
@@ -1677,6 +1693,13 @@ _&lt;em&gt;担任がすぐ辞める問題児揃いのクラスに赴任してき
 &lt;li&gt;眼と耳のラインは真っ直ぐに繋がる。&lt;/li&gt;
 &lt;li&gt;横から見ると鼻は出っ張っている為、顔の角度によっては瞳が鼻に隠れる。&lt;/li&gt;
 &lt;li&gt;俯くと、顎から首に繋がる筋肉が見えなくなる。&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[遠坂凛]]></title><description><![CDATA[Fate/staynightにより「遠坂凛」 fateで一番お気に入りのヒロインです。 Pixiv https://www.pixiv.net/artworks/79045787 仕様ソフト ClipStudioPaint]]></description><link>https://deinnote.com/07-rin-fate-01/</link><guid isPermaLink="false">https://deinnote.com/07-rin-fate-01/</guid><pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;Fatestaynightにより「遠坂凛」&quot;&gt;Fate/staynightにより「遠坂凛」&lt;/h2&gt;
+&lt;p&gt;fateで一番お気に入りのヒロインです。&lt;/p&gt;
+&lt;h3 id=&quot;Pixiv&quot;&gt;Pixiv&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.pixiv.net/artworks/79045787&quot;&gt;https://www.pixiv.net/artworks/79045787&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;仕様ソフト&quot;&gt;仕様ソフト&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ClipStudioPaint&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[制作した企業のWEBサイト]]></title><description><![CDATA[リペアショップScue ウーマンライフ新聞社 セカンドキッチン 富士屋 アトリエ・カノ ドット きら接骨院 リペアショップScue  プロジェクト概要 新規サイト制作 全体規模：2ヶ月程度 デザイン制作：1週間 コーディング：…]]></description><link>https://deinnote.com/01-pages/</link><guid isPermaLink="false">https://deinnote.com/01-pages/</guid><pubDate>Thu, 10 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;#%E3%83%AA%E3%83%9A%E3%82%A2%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97Scue&quot;&gt;リペアショップScue&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#%E3%82%A6%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%95%E6%96%B0%E8%81%9E%E7%A4%BE&quot;&gt;ウーマンライフ新聞社&lt;/a&gt;&lt;/li&gt;
