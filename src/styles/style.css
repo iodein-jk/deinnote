@@ -221,8 +221,8 @@ a:hover {
 
 @media (min-width: 768px) {
     .App-navbar::before {
-        height: 92%;
-        width: 92%;
+        height: calc(100% - 80px);
+        width: calc(100% - 80px);
     }
 }
 
