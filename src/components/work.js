@@ -10,7 +10,7 @@ class Work extends React.Component {
         return (<div>
             <ol class="d-flex flex-wrap">
                 {
-                    posts.map(post => {
+                    posts.map((post, i) => {
                         const title = post.frontmatter.title || post.fields.slug
                         const slug = post.frontmatter.slug
                         const date = post.frontmatter.date
@@ -22,7 +22,7 @@ class Work extends React.Component {
                         const tags = post.frontmatter.tags
                         const tagItems = tags.map((tag) => <li class="col"><Link to={`/works-tags/${kebabCase(tag)}/`}>{tag}</Link></li>)
 
-                        return (<li class="col-md-3 col-6" key={post.fields.slug}>
+                        return (<li class="col-md-3 col-6 work-list" key={post.fields.slug} style={{animationDelay: `0.${i}s`}}>
                             <article className="work-list-item p-10" itemScope="itemScope" itemType="http://schema.org/Article">
                                 <header>
                                     <figure>
