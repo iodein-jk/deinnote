@@ -23,19 +23,3 @@ class Pager extends React.Component {
 }
 
 export default Pager
-
-export const pageQuery = graphql `
-  query pagerQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(sort: {
-      fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-      ) {
-
-          group(field: frontmatter___tags) {
-              tag: fieldValue
-              totalCount
-          }
-    }
-  }
-`
