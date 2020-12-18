@@ -7,7 +7,7 @@ import thumnailImage from "../images/thumnail.jpg";
 class Post extends React.Component {
     render() {
         const posts = this.props.posts
-        console.log(thumnailImage);
+
         return (<div>
             <ol class="d-md-flex flex-wrap">
                 {
