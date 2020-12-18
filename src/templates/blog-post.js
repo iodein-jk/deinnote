@@ -9,20 +9,28 @@ import RelatedPosts from "../components/blog-related";
 import Image from "gatsby-image";
 import kebabCase from "lodash/kebabCase"
 
+import thumnailImage from "../images/thumnail.jpg";
+
 const BlogPostTemplate = ({data, pageContext, location}) => {
     const post = data.markdownRemark
     const siteTitle = data.site.siteMetadata
         ?.title || `Title`
-    const {previous, next} = data
-    const tags = post.frontmatter.tags
-    const tagItems = tags.map((tag) => <li class="col">
-        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-    </li>)
     const siteUrl = data.site.siteMetadata.siteUrl;
     const slug    = post.frontmatter.slug;
+    const {previous, next} = data
+
+    const tags = post.frontmatter.tags
+    const tagItems = tags.map((tag) => <li class="col"><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>)
+
+    const thumnailHtml = post.frontmatter.thumnail
+        ? <Image fluid={post.frontmatter.thumnail.childImageSharp.fluid}/>
+        : ''
+    const thumnailOgImage = post.frontmatter.thumnail
+        ? `${siteUrl}${post.frontmatter.thumnail.childImageSharp.fluid.src}`
+        : `${siteUrl}${thumnailImage}`
 
     return (<Layout location={location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt}/>
+        <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} image={thumnailOgImage}/>
         <article className="blog-post container-2" itemScope="itemScope" itemType="http://schema.org/Article">
             <header className="text-center">
                 <h1 itemProp="headline">{post.frontmatter.title}</h1>
@@ -33,7 +41,7 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
                 <Share title={post.frontmatter.title} url={`${siteUrl}/${slug}`} description={post.excerpt} />
                 <figure>
                     <div className="posts__image">
-                        <Image className="" fluid={post.frontmatter.thumnail.childImageSharp.fluid}/>
+                        {thumnailHtml}
                     </div>
                 </figure>
             </header>
@@ -48,7 +56,10 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
                 <li className="col-6 pl-10 pr-10">
                     {
                         previous && (<Link to={`/${previous.frontmatter.slug}`} rel="prev">
-                            <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                            {previous.frontmatter.thumnail
+                                ? <Image fluid={previous.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                                : <div className="gatsby-image-wrapper"><img src={thumnailImage} alt="" className="default-thumnail" /></div>
+                            }
                             <span>{previous.frontmatter.title}</span>
                         </Link>)
                     }
@@ -56,7 +67,10 @@ const BlogPostTemplate = ({data, pageContext, location}) => {
                 <li className="col-6 pl-10 pr-10">
                     {
                         next && (<Link to={`/${next.frontmatter.slug}`} rel="next">
-                            <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                            {next.frontmatter.thumnail
+                                ? <Image fluid={next.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                                : <div className="gatsby-image-wrapper"><img src={thumnailImage} alt="" className="default-thumnail" /></div>
+                            }
                             <span>{next.frontmatter.title}</span>
                         </Link>)
                     }
@@ -102,7 +116,9 @@ export const pageQuery = graphql `
         }
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: markdownRemark(
+        id: { eq: $previousPostId }
+    ) {
         fields {
           slug
         }
@@ -118,7 +134,9 @@ export const pageQuery = graphql `
         }
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: markdownRemark(
+        id: { eq: $nextPostId }
+    ) {
         fields {
           slug
         }

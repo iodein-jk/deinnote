@@ -4,7 +4,7 @@ date: "2020-02-18"
 description: "今回はイラストの練習の一環で頭蓋骨と筋肉周りの構造と主要な箇所をイラストを添えてお送りしていきます。"
 slug: atama-basic
 category: "blog"
-tags: ["イラスト","講座"]
+tags: ["イラスト","描き方"]
 thumnail: ./kaotokubi-1520x855-1.jpg
 ---
 

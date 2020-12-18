@@ -7,7 +7,7 @@ import TAG from "../components/tag"
 import POST from "../components/post"
 import PAGER from "../components/pager"
 
-const BlogIndex = ({data, location, pageContext, numPages}) => {
+const BlogIndex = ({data, location, pageContext, numPages ,siteUrl}) => {
     const siteTitle = `ブログ`
     const posts = data.allMarkdownRemark.nodes
 

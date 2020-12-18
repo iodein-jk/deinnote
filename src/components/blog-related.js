@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Image from "gatsby-image";
+import thumnailImage from "../images/thumnail.jpg";
 
 export const RelatedPosts = ({ tags, title }) => {
   // 全記事のデータを取得
@@ -60,7 +61,10 @@ export const RelatedPosts = ({ tags, title }) => {
         {relatedPosts.map((row, index) => (
             <li className="col-md-4 col-6 pl-10 pr-10" key={index}>
                 <Link to={`/${row.node.frontmatter.slug}`}>
-                    <Image fluid={row.node.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                    {row.node.frontmatter.thumnail
+                        ? <Image fluid={row.node.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
+                        : <div className="gatsby-image-wrapper"><img src={thumnailImage} alt="" className="default-thumnail" /></div>
+                    }
                     <span>{row.node.frontmatter.title}</span>
                 </Link>
             </li>
