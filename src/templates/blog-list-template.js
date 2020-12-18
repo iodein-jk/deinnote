@@ -12,7 +12,7 @@ const BlogIndex = ({data, location, pageContext, numPages ,siteUrl}) => {
     const posts = data.allMarkdownRemark.nodes
 
     return (<Layout location={location} title={siteTitle}>
-        <div class="container">
+        <div class="container-3">
             <SEO title={siteTitle} />
             <h1 class="heading-main"><span>{siteTitle}</span></h1>
             <TAG />

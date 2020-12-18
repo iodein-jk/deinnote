@@ -33,7 +33,7 @@ const Hogehoge = ({data}) => {
                 <span></span>
             </label>
             <div className="App-navbar">
-               <nav className="App-navbar-item container d-flex flex-column justify-content-center">
+               <nav className="App-navbar-item container-3 d-flex flex-column justify-content-center">
                    <div className="App-navbar-list">
                        <Link className="App-navbar-list-parent" to="/" >Blog</Link>
                        <div className="App-navbar-list-tag"><POSTTAG /></div>
