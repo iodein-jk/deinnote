@@ -18,7 +18,7 @@ const Tags = ({data, location, pageContext}) => {
     const tagHeader = `${tag}`
 
     return (<Layout location={location} title={tagHeader}>
-        <div class="container">
+        <div class="container-3">
             <SEO title={tag} />
             <h1 class="heading-main"><span>{tagHeader}</span></h1>
             <TAG tag={tags} />
