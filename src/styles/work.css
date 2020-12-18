@@ -1,3 +1,18 @@
+.work-list {
+    animation: 0.4s ease-out forwards workin;
+    opacity: 0;
+}
+
+@keyframes workin {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .work-list-item figure {
     max-height: 300px;
     overflow: hidden;

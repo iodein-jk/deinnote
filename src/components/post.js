@@ -11,10 +11,11 @@ class Post extends React.Component {
         return (<div>
             <ol class="d-md-flex flex-wrap">
                 {
-                    posts.map(post => {
+                    posts.map((post, i) => {
                         const title = post.frontmatter.title || post.fields.slug
                         const slug = post.frontmatter.slug
                         const date = post.frontmatter.date
+                        const num = i
 
                         const thumnailHtml = post.frontmatter.thumnail
                             ? <Image fluid={post.frontmatter.thumnail.childImageSharp.fluid} imgStyle={{objectFit: "cover",objectPosition:"50% 50%"}}/>
@@ -23,7 +24,7 @@ class Post extends React.Component {
                         const tags = post.frontmatter.tags
                         const tagItems = tags.map((tag) => <li class="col"><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>)
 
-                        return (<li class="col-md-4" key={post.fields.slug}>
+                        return (<li class="col-md-4 post-list" key={post.fields.slug} style={{animationDelay: `0.${i}s`}}>
                             <article className="post-list-item p-md-10 pb-20" itemScope="itemScope" itemType="http://schema.org/Article">
                                 <header>
                                     <figure>
