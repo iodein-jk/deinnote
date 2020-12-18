@@ -84,6 +84,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
       ].concat(meta)}
     >
+        <script data-ad-client="ca-pub-5420172377916977" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y75K0GH6KR"></script>
         <script>
             {`
