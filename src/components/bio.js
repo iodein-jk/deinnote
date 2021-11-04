@@ -49,7 +49,7 @@ const Bio = () => {
                 <dl className="bio-description">
                     <dt className="text-center text-md-left"><strpng>{author.name}</strpng></dt>
                     <dd>
-                        <p>漫画をこよなく愛しています。 WEBデザイナー7年目の男性社会人。 現在大阪在住 目標は好きなことで働き、生活からストレスをなくすこと。固定費10万以内に抑えたい。</p>
+                        <p></p>
                         <ul className="d-flex flex-wrap pt-10">
                             <li class="col">{author?.name && ( <p className="pr-10"><a href={`https://twitter.com/${social?.twitter || ``}`} target='_blank' rel='noreferrer'>Twitter</a></p> )}</li>
                         </ul>

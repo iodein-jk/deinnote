@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `DeinNote`,
     author: {
-      name: `イオデイン`,
+      name: `ラキシュ`,
       summary: `僕`,
     },
     description: ``,

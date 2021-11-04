@@ -24,7 +24,7 @@ class Post extends React.Component {
                         const tags = post.frontmatter.tags
                         const tagItems = tags.map((tag) => <li class="col"><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></li>)
 
-                        return (<li class="col-md-4 col-xl-3 post-list" key={post.fields.slug} style={{animationDelay: `0.${i}s`}}>
+                        return (<li class="col-md-4 col-xl-3 post-list" key={post.fields.slug} style={{animationDelay: `${i/10}s`}}>
                             <article className="post-list-item p-md-10 pb-20" itemScope="itemScope" itemType="http://schema.org/Article">
                                 <header>
                                     <figure>
