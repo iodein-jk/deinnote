@@ -41,7 +41,7 @@
   "devDependencies": {
     "prettier": "2.1.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://iodein-jk.github.io/deinnote",
   "keywords": [
     "gatsby"
   ],
@@ -52,7 +52,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "deploy": "gatsby build && gh-pages -d public",
+    "deploy": "npm run build && gh-pages -d build -m \"Updates --skip-ci\"",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
