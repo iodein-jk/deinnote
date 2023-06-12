@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001502",
     "gatsby": "^2.26.1",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-image": "^2.5.0",
@@ -57,5 +58,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
