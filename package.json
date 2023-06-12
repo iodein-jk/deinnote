@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-remark": "^2.10.0",
     "gatsby-transformer-sharp": "^2.6.0",
+    "gh-pages": "^5.0.0",
     "prismjs": "^1.22.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -51,6 +52,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
+    "deploy": "gatsby build && gh-pages -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

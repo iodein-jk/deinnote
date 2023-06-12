@@ -6,7 +6,7 @@ module.exports = {
       summary: `僕`,
     },
     description: ``,
-    siteUrl: `https://deinnote.com`,
+    siteUrl: `https://deinnote.netlify.app`,
     social: {
       twitter: `iodein_jk`,
     },
@@ -101,4 +101,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  pathPrefix: `/deinnote`,
 }
